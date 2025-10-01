@@ -57,9 +57,9 @@
 
 ## 🔗 Related Issues
 
-<!-- Link related issues using keywords: Closes #123, Fixes #456, Refs #789 -->
+<!-- Link related issues using keywords: Closes #issue-number, Fixes #issue-number, Refs #issue-number -->
 
-Closes #
+<!-- Closes #issue-number -->
 
 ## 📝 Additional Notes
 

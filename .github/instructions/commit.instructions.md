@@ -142,10 +142,10 @@ Must be **one** of the following (case-sensitive, lowercase only):
 
 #### Issue References
 
-- `Refs #123` - References an issue
-- `Closes #456` - Closes an issue
-- `Fixes #789` - Fixes a bug issue
-- Multiple: `Closes #123, #456`
+- `Refs #issue-number` - References an issue
+- `Closes #issue-number` - Closes an issue
+- `Fixes #issue-number` - Fixes a bug issue
+- Multiple: `Closes #issue-number, #another-issue`
 
 ## Examples for Semantic Release
 
@@ -162,7 +162,7 @@ The middleware can be applied to any route using @UseGuards()
 decorator and automatically validates token expiration and
 signature.
 
-Closes #42
+Closes #issue-number
 ```
 
 **Result**: Version 1.0.0 → 1.1.0, appears in CHANGELOG under "Features"
@@ -178,7 +178,7 @@ when user profile is not initialized.
 This fixes an issue where newly created users without profiles
 would cause the API to crash when fetching user details.
 
-Fixes #128
+Fixes #issue-number
 ```
 
 **Result**: Version 1.1.0 → 1.1.1, appears in CHANGELOG under "Bug Fixes"
@@ -194,7 +194,7 @@ user lookup queries by 80%.
 Before: ~500ms average query time
 After: ~100ms average query time
 
-Refs #201
+Refs #issue-number
 ```
 
 **Result**: Version 1.1.1 → 1.1.2, appears in CHANGELOG under "Performance Improvements"
@@ -217,7 +217,7 @@ Migration guide:
 
 Clients must update to access user.data instead of the root array.
 
-Closes #89
+Closes #issue-number
 ```
 
 **Result**: Version 1.1.2 → 2.0.0, appears in CHANGELOG under "BREAKING CHANGES"
@@ -365,8 +365,8 @@ The following rules are **automatically enforced** on every commit:
    - Explain the "why" not just the "what"
 
 4. **Reference issues**
-   - Use `Closes #123` to auto-close issues
-   - Use `Refs #123` to reference without closing
+   - Use `Closes #issue-number` to auto-close issues
+   - Use `Refs #issue-number` to reference without closing
 
 5. **Be careful with breaking changes**
    - Only use when truly breaking backward compatibility
