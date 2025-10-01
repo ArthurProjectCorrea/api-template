@@ -48,7 +48,7 @@ Analyze and determine:
   - Migration steps required
   - Affected APIs or interfaces
 
-- **Issues**: Reference related issue numbers (e.g., "#123", "closes #456")
+- **Issues**: Reference related issue numbers (e.g., "#issue-number", "closes #issue-number")
 
 ### 3. Report Format
 
