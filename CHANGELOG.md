@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/ArthurProjectCorrea/api-template/compare/v1.0.0...v1.1.0) (2025-10-01)
+
+
+### Bug Fixes
+
+* **docs:** remove hardcoded issue references from templates ([adc9d5d](https://github.com/ArthurProjectCorrea/api-template/commit/adc9d5d9c0c020fd2f14dbaa28f3c42aadd83792)), closes [#123](https://github.com/ArthurProjectCorrea/api-template/issues/123) [#456](https://github.com/ArthurProjectCorrea/api-template/issues/456)
+
+
+### Features
+
+* **ci:** automate release workflow on main branch merges ([4d5f79f](https://github.com/ArthurProjectCorrea/api-template/commit/4d5f79fa38d08c1a5cbd6ff174ff17fc4d495aaf))
+
 # 1.0.0 (2025-10-01)
 
 
