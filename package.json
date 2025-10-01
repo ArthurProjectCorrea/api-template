@@ -5,6 +5,7 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "packageManager": "pnpm@10.12.1",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -21,6 +22,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "commit": "cz",
+    "branch:validate": "validate-branch-name",
     "release": "semantic-release",
     "release:dry": "semantic-release --dry-run",
     "prepare": "husky install"
@@ -67,7 +69,8 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "validate-branch-name": "^1.3.2"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -98,5 +101,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "validate-branch-name": {
+    "pattern": "^(main|develop|release\\/v\\d+\\.\\d+\\.\\d+|feature\\/[a-z0-9._-]+|bugfix\\/[a-z0-9._-]+|hotfix\\/[a-z0-9._-]+)$",
+    "errorMsg": "Branch name must follow the pattern:\n  - main\n  - develop\n  - release/v{major}.{minor}.{patch}\n  - feature/{name}\n  - bugfix/{name}\n  - hotfix/{name}\n\nExamples:\n  - feature/user-authentication\n  - bugfix/fix-memory-leak\n  - hotfix/critical-security-patch\n  - release/v1.2.0"
   }
 }

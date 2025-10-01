@@ -1,5 +1,31 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm test
+# Get current branch name
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Protected branches - no direct commits allowed
+if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+  echo ""
+  echo "❌ ERROR: Direct commits to '$branch' branch are not allowed!"
+  echo ""
+  echo "Please follow this workflow:"
+  echo "  1. Create a feature/bugfix/hotfix branch:"
+  echo "     git checkout -b feature/your-feature-name"
+  echo "     git checkout -b bugfix/your-bugfix-name"
+  echo "     git checkout -b hotfix/your-hotfix-name"
+  echo ""
+  echo "  2. Make your commits on that branch"
+  echo "  3. Push and create a Pull Request to merge into '$branch'"
+  echo ""
+  echo "For releases, use:"
+  echo "  git checkout -b release/v1.0.0"
+  echo ""
+  exit 1
+fi
+
+# Validate branch name pattern
+npx validate-branch-name
+
+# Run lint-staged
 npx lint-staged

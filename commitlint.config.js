@@ -24,4 +24,8 @@ module.exports = {
     'type-empty': [2, 'never'],
     'type-case': [2, 'always', 'lower-case'],
   },
+  ignores: [
+    (message) => message.startsWith('chore(release):'),
+    (message) => message.includes('[skip ci]'),
+  ],
 };
